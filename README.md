@@ -1,59 +1,90 @@
-# MongoDB Fundamentals - Week 1
+PLP Bookstore – MongoDB Data Layer Project
 
-## Setup Instructions
+This project demonstrates the fundamentals and advanced techniques of working with MongoDB.
+It is built as part of the PLP MERN Stack Development course.
 
-Before you begin this assignment, please make sure you have the following installed:
+Project Overview
 
-1. **MongoDB Community Edition** - [Installation Guide](https://www.mongodb.com/docs/manual/administration/install-community/)
-2. **MongoDB Shell (mongosh)** - This is included with MongoDB Community Edition
-3. **Node.js** - [Download here](https://nodejs.org/)
+We are building a simple Bookstore Database where:
 
-### Node.js Package Setup
+A MongoDB database named plp_bookstore is created.
 
-Once you have Node.js installed, run the following commands in your assignment directory:
+A collection named books stores book information.
 
-```bash
-# Initialize a package.json file
-npm init -y
+Sample data is inserted into the collection.
 
-# Install the MongoDB Node.js driver
-npm install mongodb
-```
+CRUD operations (Create, Read, Update, Delete) are performed.
 
-## Assignment Overview
+Advanced queries and aggregation pipelines are demonstrated.
 
-This week focuses on MongoDB fundamentals including:
-- Creating and connecting to MongoDB databases
-- CRUD operations (Create, Read, Update, Delete)
-- MongoDB queries and filters
-- Aggregation pipelines
-- Indexing for performance
+Project Structure
+mongodb-data-layer-fundamentals-and-advanced-techniques-Mukangafu/
+│── insert_books.js      # Script to insert sample book data
+│── queries.js           # Script with CRUD & advanced queries
+│── README.md            # Project documentation
 
-## Submission
+Setup Instructions
+1. Clone the Repository
+cd Desktop/MERN
+git clone https://github.com/PLP-MERN-Stack-Development/mongodb-data-layer-fundamentals-and-advanced-techniques-Mukangafu.git
+cd mongodb-data-layer-fundamentals-and-advanced-techniques-Mukangafu
 
-Complete all the exercises in this assignment and push your code to GitHub using the provided GitHub Classroom link.
+2. Start MongoDB
 
-## Getting Started
+Make sure your MongoDB server is running.
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install MongoDB locally or set up a MongoDB Atlas account
-4. Run the provided `insert_books.js` script to populate your database
-5. Complete the tasks in the assignment document
+If you are using local MongoDB, run:
 
-## Files Included
+mongod
 
-- `Week1-Assignment.md`: Detailed assignment instructions
-- `insert_books.js`: Script to populate your MongoDB database with sample book data
 
-## Requirements
+If you are using MongoDB Atlas, ensure you have your connection string ready.
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- MongoDB Shell (mongosh) or MongoDB Compass
+3. Open Mongo Shell
 
-## Resources
+Login with your MongoDB credentials:
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [MongoDB University](https://university.mongodb.com/)
-- [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native/) 
+mongosh -u <username> -p <password> --authenticationDatabase admin
+
+4. Run Insert Script
+
+Load the sample data into the books collection:
+
+load("insert_books.js")
+
+
+This will insert 10 sample book documents into the plp_bookstore database.
+
+5. Run Queries Script
+
+To test CRUD and advanced operations:
+
+load("queries.js")
+
+Example Data Inserted
+{
+  "title": "Dapper Book",
+  "author": "Muturi Daniel",
+  "price": 100,
+  "genre": "Programming",
+  "publishedYear": 2023
+}
+
+Features Demonstrated
+
+Creating a database and collection
+
+Inserting single & multiple documents
+
+Retrieving documents using queries
+
+Updating & deleting documents
+
+Using operators ($gt, $lt, $in, $and, $or)
+
+Aggregation pipeline examples (e.g., group by genre, average price)
+
+Author
+
+Daniel Muturi
+PLP MERN FullStack Developer
